@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Training Data Format &mdash; rasa NLU 0.10.5 documentation</title>
+  <title>Training Data Format &mdash; rasa NLU 0.10.6 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="rasa NLU 0.10.5 documentation" href="index.html"/>
+    <link rel="top" title="rasa NLU 0.10.6 documentation" href="index.html"/>
         <link rel="next" title="Using rasa NLU as a HTTP server" href="http.html"/>
         <link rel="prev" title="Migrating an existing app" href="migrating.html"/>
 <link href="_static/css/rasa_theme.css" rel="stylesheet" type="text/css">
@@ -197,7 +197,7 @@
 
 
 
-    <p class="scv-banner scv-sphinx_rtd_theme"><a href="../0.10.5/dataformat.html"><b>Warning:</b> This document is for the development version of rasa NLU. The latest version is 0.10.5.</a></p>
+    <p class="scv-banner scv-sphinx_rtd_theme"><a href="../0.10.6/dataformat.html"><b>Warning:</b> This document is for the development version of rasa NLU. The latest version is 0.10.6.</a></p>
 <div class="section" id="training-data-format">
 <span id="section-dataformat"></span><h1>Training Data Format<a class="headerlink" href="#training-data-format" title="Permalink to this headline">¶</a></h1>
 <p>The training data for rasa NLU is structured into different parts, <code class="docutils literal"><span class="pre">common_examples</span></code>, <code class="docutils literal"><span class="pre">entity_synonyms</span></code> and <code class="docutils literal"><span class="pre">regex_features</span></code>. The most important one is <code class="docutils literal"><span class="pre">common_examples</span></code>.</p>
@@ -337,7 +337,7 @@ training data!</p>
 </div>
 <div class="section" id="markdown-format">
 <h2>Markdown Format<a class="headerlink" href="#markdown-format" title="Permalink to this headline">¶</a></h2>
-<p>Alternatively training data can be used in the following markdown format (Regex features not supported yet):</p>
+<p>Alternatively training data can be used in the following markdown format (Regex features not supported yet). Examples are listed using the unordered list syntax, e.g. minus <code class="docutils literal"><span class="pre">-</span></code> or asterisk <code class="docutils literal"><span class="pre">*</span></code>:</p>
 <div class="highlight-markdown"><div class="highlight"><pre><span></span>## intent:check_balance
 - what is my balance &lt;!-- no entity --&gt;
 - how much do I have on my [savings](source_account) &lt;!-- entity &quot;source_account&quot; has value &quot;savings&quot; --&gt;
@@ -400,6 +400,7 @@ training data!</p>
     <div class="rst-other-versions">
         <dl>
             <dt>Tags</dt>
+            <dd><a href="../0.10.6/dataformat.html">0.10.6</a></dd>
             <dd><a href="../0.10.5/dataformat.html">0.10.5</a></dd>
             <dd><a href="../0.10.4/dataformat.html">0.10.4</a></dd>
             <dd><a href="../0.10.3/dataformat.html">0.10.3</a></dd>
@@ -444,7 +445,7 @@ training data!</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.10.5',
+            VERSION:'0.10.6',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
