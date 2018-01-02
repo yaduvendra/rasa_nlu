@@ -223,8 +223,6 @@ setting up authentication. It involves creating a service account key file from 
 </ul>
 <p>If there is no bucket with the name <code class="docutils literal"><span class="pre">$BUCKET_NAME</span></code> rasa will create it.
 Models are gzipped before saving to cloud.</p>
-<p>If you run the rasa NLU server with a <code class="docutils literal"><span class="pre">server_model_dirs</span></code> which does not exist and <code class="docutils literal"><span class="pre">BUCKET_NAME</span></code> is set, rasa will attempt to fetch a matching zip from your cloud storage bucket.
-E.g. if you have <code class="docutils literal"><span class="pre">server_model_dirs</span> <span class="pre">=</span> <span class="pre">./data/my_project/model_20161111-180000</span></code> rasa will look for a file named <code class="docutils literal"><span class="pre">model_20161111-180000.tar.gz</span></code> in your bucket, unzip it and load the model.</p>
 </div>
 
 
