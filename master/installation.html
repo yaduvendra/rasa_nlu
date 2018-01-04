@@ -215,7 +215,7 @@ install &amp; configure a backend. Which backend you want to use is up to you.</
 <div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/RasaHQ/rasa_nlu.git
 <span class="nb">cd</span> rasa_nlu
 pip install -r requirements.txt
-python setup.py install
+pip install -e .
 </pre></div>
 </div>
 <p>rasa NLU allows you to use components to process your messages. E.g. there is a component for intent classification and
@@ -231,7 +231,7 @@ don&#8217;t mind the additional dependencies lying around, you can use</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -r alt_requirements/requirements_full.txt
 </pre></div>
 </div>
-<p class="last">to install all requirements.</p>
+<p class="last">instead of <code class="docutils literal"><span class="pre">requirements.txt</span></code> to install all requirements.</p>
 </div>
 </div>
 <div class="section" id="setting-up-a-backend">
