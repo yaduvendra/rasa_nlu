@@ -244,7 +244,7 @@ For example, the <code class="docutils literal"><span class="pre">entities</span
 <div class="section" id="pre-configured-pipelines">
 <h2>Pre-configured Pipelines<a class="headerlink" href="#pre-configured-pipelines" title="Permalink to this headline">¶</a></h2>
 <p>To ease the burden of coming up with your own processing pipelines, we provide a couple of ready to use templates
-which can be used by settings the <code class="docutils literal"><span class="pre">pipeline</span></code> configuration value to the name of the template you want to use.
+which can be used by setting the <code class="docutils literal"><span class="pre">pipeline</span></code> configuration value to the name of the template you want to use.
 Here is a list of the existing templates:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -611,8 +611,7 @@ if your training data contains the following examples:</p>
                 <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
                 <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
                 <span class="nt">&quot;entity&quot;</span><span class="p">:</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;extractor&quot;</span> <span class="s2">&quot;ner_mitie&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;processor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ner_synonyms&quot;</span><span class="p">]}]</span>
+               <span class="p">}]</span>
 <span class="p">},</span>
 <span class="p">{</span>
   <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;I got a new flat in NYC.&quot;</span><span class="p">,</span>
@@ -621,8 +620,7 @@ if your training data contains the following examples:</p>
                 <span class="nt">&quot;start&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
                 <span class="nt">&quot;end&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
                 <span class="nt">&quot;entity&quot;</span><span class="p">:</span> <span class="s2">&quot;city&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;extractor&quot;</span> <span class="s2">&quot;ner_mitie&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;processor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ner_synonyms&quot;</span><span class="p">]}]</span>
+               <span class="p">}]</span>
 <span class="p">}]</span>
 </pre></div>
 </div>
@@ -725,7 +723,7 @@ one component can calculate feature vectors for the training data, store that wi
 component can retrieve these feature vectors from the context and do intent classification.</p>
 <p>Initially the context is filled with all configuration values, the arrows in the image show the call order
 and visualize the path of the passed context. After all components are trained and persisted, the
-final context dictionary is used to persist the models metadata.</p>
+final context dictionary is used to persist the model&#8217;s metadata.</p>
 </div>
 </div>
 

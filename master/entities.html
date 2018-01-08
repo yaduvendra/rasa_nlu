@@ -272,7 +272,7 @@ It is recommended that you experiment with both of these to see what works best 
 <div class="section" id="returned-entities-object">
 <h2>Returned Entities Object<a class="headerlink" href="#returned-entities-object" title="Permalink to this headline">¶</a></h2>
 <p>In the object returned after parsing there are two fields that show information about how the pipeline impacted the entities returned. The <code class="docutils literal"><span class="pre">extractor</span></code> field of an entity tells you which entity extractor found this particular entity. The <code class="docutils literal"><span class="pre">processors</span></code> field contains the name of components that altered this specific entity.</p>
-<p>The use of synonyms can also cause the <code class="docutils literal"><span class="pre">value</span></code> field not match the <code class="docutils literal"><span class="pre">text</span></code> exaclty. Instead it will return the trained synonym.</p>
+<p>The use of synonyms can also cause the <code class="docutils literal"><span class="pre">value</span></code> field not match the <code class="docutils literal"><span class="pre">text</span></code> exactly. Instead it will return the trained synonym.</p>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;show me chinese restaurants&quot;</span><span class="p">,</span>
   <span class="nt">&quot;intent&quot;</span><span class="p">:</span> <span class="s2">&quot;restaurant_search&quot;</span><span class="p">,</span>
