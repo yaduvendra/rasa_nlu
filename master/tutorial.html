@@ -301,6 +301,10 @@ When no project is specified, as in this example, a &#8220;default&#8221; one wi
 </div>
 <p>More information about starting the server can be found in <a class="reference internal" href="http.html#section-http"><span class="std std-ref">Using rasa NLU as a HTTP server</span></a>.</p>
 <p>You can then test your new model by sending a request. Open a new tab/window on your terminal and run</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>For windows users</strong> the windows command line interface doesn&#8217;t like single quotes. Use doublequotes and escape where necessary. <code class="docutils literal"><span class="pre">curl</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">&quot;localhost:5000/parse&quot;</span> <span class="pre">-d</span> <span class="pre">&quot;{/&quot;q/&quot;:/&quot;I</span> <span class="pre">am</span> <span class="pre">looking</span> <span class="pre">for</span> <span class="pre">Chinese</span> <span class="pre">food/&quot;}&quot;</span> <span class="pre">|</span> <span class="pre">python</span> <span class="pre">-m</span> <span class="pre">json.tool</span></code></p>
+</div>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> curl -X POST localhost:5000/parse -d <span class="s1">&#39;{&quot;q&quot;:&quot;I am looking for Chinese food&quot;}&#39;</span> <span class="p">|</span> python -m json.tool
 </pre></div>
 </div>
