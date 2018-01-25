@@ -204,7 +204,8 @@
     <p class="scv-banner scv-sphinx_rtd_theme"><a href="../0.10.6/installation.html"><b>Warning:</b> This document is for the development version of rasa NLU. The latest version is 0.10.6.</a></p>
 <div class="section" id="installation">
 <span id="section-backends"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Rasa NLU itself doesn&#8217;t have any external requirements, but to do something useful with it you need to
+<p>Rasa NLU itself doesn&#8217;t have any external requirements,
+but to do something useful with it you need to
 install &amp; configure a backend. Which backend you want to use is up to you.</p>
 <div class="section" id="setting-up-rasa-nlu">
 <h2>Setting up rasa NLU<a class="headerlink" href="#setting-up-rasa-nlu" title="Permalink to this headline">¶</a></h2>
@@ -219,15 +220,19 @@ pip install -r requirements.txt
 pip install -e .
 </pre></div>
 </div>
-<p>rasa NLU allows you to use components to process your messages. E.g. there is a component for intent classification and
-there are several different components for entity recognition. The different components
-have their own requirements. To get you started quickly, this installation guide only installs
-the basic requirements, you may need to install other dependencies if you want to use
-certain components. When running rasa NLU it will check if all needed dependencies are
+<p>rasa NLU allows you to use components to process your messages.
+E.g. there is a component for intent classification and
+there are several different components for entity recognition.
+The different components have their own requirements. To get
+you started quickly, this installation guide only installs
+the basic requirements, you may need to install other
+dependencies if you want to use certain components. When running
+rasa NLU it will check if all needed dependencies are
 installed and tell you which are missing, if any.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>If you want to make sure you got all the dependencies installed any component might ever need, and you
+<p>If you want to make sure you got all the dependencies
+installed any component might ever need, and you
 don&#8217;t mind the additional dependencies lying around, you can use</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -r alt_requirements/requirements_full.txt
 </pre></div>
@@ -237,49 +242,54 @@ don&#8217;t mind the additional dependencies lying around, you can use</p>
 </div>
 <div class="section" id="setting-up-a-backend">
 <h2>Setting up a backend<a class="headerlink" href="#setting-up-a-backend" title="Permalink to this headline">¶</a></h2>
-<p>Most of the processing pipeline you can use with rasa NLU either require MITIE, spaCy or sklearn to be installed.</p>
+<p>Most of the processing pipeline you can use with rasa NLU
+either require MITIE, spaCy or sklearn to be installed.</p>
 <div class="section" id="best-for-most-spacy-sklearn">
 <h3>Best for most: spaCy + sklearn<a class="headerlink" href="#best-for-most-spacy-sklearn" title="Permalink to this headline">¶</a></h3>
 <p>You can also run using these two in combination.</p>
-<p>installing spacy just requires (for more information visit the <a class="reference external" href="https://spacy.io/docs/usage/">spacy docu</a>):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -U spacy
-python -m spacy download en
+<p>installing spacy just requires (for more information
+visit the <a class="reference external" href="https://spacy.io/docs/usage/">spacy docu</a>):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install rasa_nlu<span class="o">[</span>spacy<span class="o">]</span>
+python -m spacy download en_core_web_md
+python -m spacy link en_core_web_md en
 </pre></div>
 </div>
-<p>If you haven&#8217;t used <code class="docutils literal"><span class="pre">numpy/scipy</span></code> before, it is highly recommended that you install and use <a class="reference external" href="https://www.continuum.io/downloads">Anaconda</a>.</p>
-<p>Using Anaconda:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>conda install scikit-learn
-pip install -U sklearn-crfsuite
-</pre></div>
-</div>
-<p>Using pip:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -U scikit-learn scipy sklearn-crfsuite
-</pre></div>
-</div>
+<p>We highly recommend using at least the &#8220;medium&#8221; sized models (<code class="docutils literal"><span class="pre">_md</span></code>)instead of
+the spacy&#8217;s default small <code class="docutils literal"><span class="pre">en_core_web_sm</span></code> model. Small models will
+work as well, the downside is that
+they have worse performance during intent classification.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Using spaCy as the backend for Rasa is the <strong>preferred option</strong>. For most domains the performance is better or equally
-good as results achieved with MITIE. Additionally, it is easier to setup and faster to train.</p>
+<p class="last">Using spaCy as the backend for Rasa is the <strong>preferred option</strong>.
+For most domains the performance is better or equally
+good as results achieved with MITIE. Additionally,
+it is easier to setup and faster to train.</p>
 </div>
 </div>
 <div class="section" id="first-alternative-mitie">
 <h3>First Alternative: MITIE<a class="headerlink" href="#first-alternative-mitie" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference external" href="https://github.com/mit-nlp/MITIE">MITIE</a> backend is all-inclusive, in the sense that it provides both the NLP and the ML parts.</p>
+<p>The <a class="reference external" href="https://github.com/mit-nlp/MITIE">MITIE</a> backend is all-inclusive,
+in the sense that it provides both the NLP and the ML parts.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pip install git+https://github.com/mit-nlp/MITIE.git
+pip install rasa_nlu<span class="o">[</span>mitie<span class="o">]</span>
 </pre></div>
 </div>
 <p>and then download the <a class="reference external" href="https://github.com/mit-nlp/MITIE/releases/download/v0.4/MITIE-models-v0.2.tar.bz2">MITIE models</a>.
-The file you need is <code class="docutils literal"><span class="pre">total_word_feature_extractor.dat</span></code>. Save this somewhere and in your <code class="docutils literal"><span class="pre">config.json</span></code> add <code class="docutils literal"><span class="pre">'mitie_file'</span> <span class="pre">:</span> <span class="pre">'/path/to/total_word_feature_extractor.dat'</span></code>.</p>
+The file you need is <code class="docutils literal"><span class="pre">total_word_feature_extractor.dat</span></code>. Save this
+somewhere and in your <code class="docutils literal"><span class="pre">config.json</span></code> add
+<code class="docutils literal"><span class="pre">'mitie_file'</span> <span class="pre">:</span> <span class="pre">'/path/to/total_word_feature_extractor.dat'</span></code>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<dl class="last docutils">
-<dt>Training MITIE can be quite slow on datasets with more than a few intents. You can try</dt>
-<dd><ul class="first last simple">
-<li>to use the sklearn + MITIE backend instead (which uses sklearn for the training) or</li>
-<li>you can install <a class="reference external" href="https://github.com/tmbo/mitie">our mitie fork</a> which should reduce the training time as well.</li>
+<p>Training MITIE can be quite slow on datasets
+with more than a few intents. You can try</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>to use the sklearn + MITIE backend instead
+(which uses sklearn for the training) or</li>
+<li>you can install <a class="reference external" href="https://github.com/tmbo/mitie">our mitie fork</a>
+which should reduce the training time as well.</li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="another-alternative-sklearn-mitie">
@@ -289,9 +299,10 @@ The file you need is <code class="docutils literal"><span class="pre">total_word
 <li>the fast and good intent classification from sklearn and</li>
 <li>the good entitiy recognition and feature vector creation from MITIE</li>
 </ol>
-<p>Especially, if you have a larger number of intents (more than 10), training intent classifiers with MITIE can take very
-long.</p>
-<p>To use this backend you need to follow the instructions for installing both, sklearn and MITIE.</p>
+<p>Especially, if you have a larger number of intents (more than 10),
+training intent classifiers with MITIE can take very long.</p>
+<p>To use this backend you need to follow the instructions for
+installing both, sklearn and MITIE.</p>
 </div>
 </div>
 </div>
