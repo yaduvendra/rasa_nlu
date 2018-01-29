@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#entity-synonyms">Entity Synonyms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#regular-expression-features">Regular Expression Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#markdown-format">Markdown Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organization">Organization</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="http.html">Using rasa NLU as a HTTP server</a></li>
@@ -352,6 +353,17 @@ training data!</p>
 ## synonym:savings   &lt;!-- synonyms, method 2 --&gt;
 - pink pig
 </pre></div>
+</div>
+</div>
+<div class="section" id="organization">
+<h2>Organization<a class="headerlink" href="#organization" title="Permalink to this headline">¶</a></h2>
+<p>The training data can either be stored in a single file or split into multiple files.
+For larger training examples splitting the training data into multiple files (e.g. one per intent) might be
+beneficial in terms of maintainability.</p>
+<p>Storing files with different file formats (e.g. markdown and JSON) in one directory is currently not supported.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Splitting the training data into multiple files currently only words for markdown and JSON data. For other file formats you have to use the single-file approach.</p>
 </div>
 </div>
 </div>
